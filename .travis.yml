@@ -1,5 +1,11 @@
 language: python
 python:
   - '3.6'
+install:
+  - pip install requirements.txt
+  - pip install codecov
 script:
-  - pytest
+  - pytest --cov==app
+
+after_seccess:
+  - codecov
